@@ -1,11 +1,12 @@
 package com.JavaCamp.HumanResourceManagementSystem.api;
 
 import com.JavaCamp.HumanResourceManagementSystem.business.abstracts.SystemStaffService;
+import com.JavaCamp.HumanResourceManagementSystem.core.utilities.results.DataResult;
+import com.JavaCamp.HumanResourceManagementSystem.core.utilities.results.Result;
 import com.JavaCamp.HumanResourceManagementSystem.entities.concretes.SystemStaff;
+import com.JavaCamp.HumanResourceManagementSystem.entities.concretes.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,7 +23,12 @@ public class SystemStavesController {
     }
 
     @GetMapping("/getall")
-    public List<SystemStaff> getAll(){
+    public DataResult<List<SystemStaff>> getAll(){
         return this.systemStaffService.getAll();
+    }
+
+    @PostMapping("/add")
+    public Result add(@RequestBody SystemStaff systemStaff){
+        return this.systemStaffService.add(systemStaff);
     }
 }

@@ -1,11 +1,12 @@
 package com.JavaCamp.HumanResourceManagementSystem.api;
 
 import com.JavaCamp.HumanResourceManagementSystem.business.abstracts.JobPositionService;
+import com.JavaCamp.HumanResourceManagementSystem.core.utilities.results.DataResult;
+import com.JavaCamp.HumanResourceManagementSystem.core.utilities.results.Result;
 import com.JavaCamp.HumanResourceManagementSystem.entities.concretes.JobPosition;
+import com.JavaCamp.HumanResourceManagementSystem.entities.concretes.SystemStaff;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,7 +23,12 @@ public class JobPositionsController {
     }
 
     @GetMapping("/getall")
-    public List<JobPosition> getAll(){
+    public DataResult<List<JobPosition>> getAll(){
         return this.jobPositionsService.getAll();
+    }
+
+    @PostMapping("/add")
+    public Result add(@RequestBody JobPosition jobPosition){
+        return this.jobPositionsService.add(jobPosition);
     }
 }
