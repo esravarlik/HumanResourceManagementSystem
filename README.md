@@ -35,8 +35,8 @@ Kabul Kriterleri:
 
 Bu pozisyonlar tekrar edemez. Kullanıcı uyarılır.
 
-![image](https://user-images.githubusercontent.com/40757395/169865765-46906906-bf3a-4337-976e-ace273af17b0.png)
 
+![hrms](https://user-images.githubusercontent.com/40757395/170021104-510e89f2-833a-4a82-a665-134183b9d0fe.png)
 
 ---
 2
